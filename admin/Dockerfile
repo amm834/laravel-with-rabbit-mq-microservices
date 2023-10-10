@@ -14,11 +14,10 @@ COPY database/ database/
 COPY composer.json composer.json
 COPY composer.lock composer.lock
 
+COPY . .
+
 RUN composer install
 
-COPY . .
-RUN composer dump-autoload
-
-CMD ["php","artisan","serve", "--host","0.0.0.0"]
+CMD php artisan serve --host=0.0.0.0
 EXPOSE 8000
 
