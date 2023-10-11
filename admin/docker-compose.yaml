@@ -16,6 +16,9 @@ services:
       - .:/app
     depends_on:
       - admin_database
+      - redis
+      - mailhog
+
   admin_database:
     image: mariadb
     restart: always
@@ -34,5 +37,22 @@ services:
     ports:
       - "3306:3306"
 
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - laravel
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - laravel
+
 volumes:
   admin_database:
+
