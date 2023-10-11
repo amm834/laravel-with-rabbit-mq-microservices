@@ -138,11 +138,21 @@
       <path value="$PROJECT_DIR$/admin/vendor/pestphp/pest-plugin" />
       <path value="$PROJECT_DIR$/admin/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/admin/vendor/_laravel_idea" />
+      <path value="$PROJECT_DIR$/admin/vendor/php-amqplib/php-amqplib" />
+      <path value="$PROJECT_DIR$/admin/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/admin/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/admin/vendor/vladimir-yuldashev/laravel-queue-rabbitmq" />
+      <path value="$PROJECT_DIR$/admin/vendor/phpseclib/phpseclib" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/admin/phpunit.xml" custom_loader_path="$PROJECT_DIR$/admin/vendor/autoload.php" paratest_path="$PROJECT_DIR$/admin/vendor/bin/paratest_for_phpstorm" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />

@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/admin/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/admin/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/admin/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/_laravel_idea" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/brick/math" />
@@ -49,16 +51,20 @@
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/nunomaduro/collision" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/nunomaduro/termwind" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/pestphp/pest" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/pestphp/pest-plugin" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/pestphp/pest-plugin-arch" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/pestphp/pest-plugin-laravel" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/vendor/php-amqplib/php-amqplib" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phpseclib/phpseclib" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phpstan/phpdoc-parser" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/phpunit/php-file-iterator" />
@@ -129,6 +135,7 @@
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/ta-tikoma/phpunit-architecture-test" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/vendor/vladimir-yuldashev/laravel-queue-rabbitmq" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/webmozart/assert" />
