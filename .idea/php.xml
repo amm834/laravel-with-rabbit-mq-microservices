@@ -275,6 +275,7 @@
       <path value="$PROJECT_DIR$/gateway/vendor/league/config" />
       <path value="$PROJECT_DIR$/gateway/vendor/opcodesio/mail-parser" />
       <path value="$PROJECT_DIR$/gateway/vendor/opcodesio/log-viewer" />
+      <path value="$PROJECT_DIR$/admin/vendor/laravel/horizon" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

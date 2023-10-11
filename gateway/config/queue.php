@@ -72,7 +72,6 @@ return [
         ],
 
         'rabbitmq' => [
-
             'driver' => 'rabbitmq',
             'hosts' => [
                 [
@@ -82,10 +81,8 @@ return [
                     'password' => env('RABBITMQ_PASSWORD', 'guest'),
                     'vhost' => env('RABBITMQ_VHOST', '/'),
                 ],
-                // ...
             ],
 
-            // ...
         ],
 
     ],

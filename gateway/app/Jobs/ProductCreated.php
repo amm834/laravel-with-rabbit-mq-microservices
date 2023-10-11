@@ -9,6 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use function Laravel\Prompts\error;
 
 class ProductCreated implements ShouldQueue
 {
@@ -24,12 +25,16 @@ class ProductCreated implements ShouldQueue
 
     public function handle(): void
     {
+        echo $this->product['id'];
         try {
-            echo "Product created: {$this->product['id']}\n";
-            print_r($this->product);
-            Product::create($this->product);
+            $id = $this->product['id'];
+            Product::create([
+                'id' => $id,
+            ]);
+            info('Product created with id: ' . $id);
         } catch (\Exception $exception) {
-            echo "Product created: {$this->product['id']} failed\n";
+            error($exception->getMessage());
+            throw new \Exception($exception->getMessage());
         }
     }
 }

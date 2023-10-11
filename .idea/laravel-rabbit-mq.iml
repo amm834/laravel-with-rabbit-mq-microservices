@@ -279,6 +279,7 @@
       <excludeFolder url="file://$MODULE_DIR$/gateway/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/gateway/vendor/opcodesio/log-viewer" />
       <excludeFolder url="file://$MODULE_DIR$/gateway/vendor/opcodesio/mail-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/vendor/laravel/horizon" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

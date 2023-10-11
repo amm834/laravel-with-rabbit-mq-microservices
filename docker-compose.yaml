@@ -1,7 +1,11 @@
 version: "3.8"
 
 networks:
-  laravel:
+  gateway:
+    driver: bridge
+  admin:
+    driver: bridge
+
 
 services:
   gateway:
@@ -10,13 +14,15 @@ services:
       dockerfile: ./gateway/Dockerfile
     ports:
       - "8000:8000"
-    networks:
-      - laravel
     volumes:
       - ./:/app
     depends_on:
       - gateway_db
       - admin
+    env_file:
+      - ./gateway/.env
+    networks:
+      - gateway
 
   admin:
     build:
@@ -25,11 +31,14 @@ services:
     ports:
       - "8001:8000"
     networks:
-      - laravel
+      - admin
+    env_file:
+      - ./admin/.env
     volumes:
       - ./:/app
     depends_on:
       - admin_db
+
 
   gateway_db:
     image: mariadb
@@ -43,7 +52,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
-      - laravel
+      - gateway
     volumes:
       - ./gateway/storage/database:/var/lib/mysql:rw
     user: root
@@ -62,7 +71,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
-      - laravel
+      - admin
     volumes:
       - ./admin/storage/database:/var/lib/mysql:rw
     user: root
