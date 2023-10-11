@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/admin/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/admin/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/admin/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/admin/vendor/_laravel_idea" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/admin/vendor/composer" />

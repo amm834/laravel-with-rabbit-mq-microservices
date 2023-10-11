@@ -13,7 +13,7 @@ RUN docker-php-ext-install pdo pdo_mysql
 WORKDIR /app
 COPY . .
 
-RUN cd /app/admin && composer install
+RUN cd /app/gateway && composer install
 
-CMD php /app/admin/artisan serve --host=0.0.0.0
+CMD php /app/gateway/artisan serve --host=0.0.0.0
 EXPOSE 8000

@@ -1,0 +1,74 @@
+version: "3.8"
+
+networks:
+  laravel:
+
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: ./gateway/Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - laravel
+    volumes:
+      - ./:/app
+    depends_on:
+      - gateway_db
+      - admin
+
+  admin:
+    build:
+      context: .
+      dockerfile: ./admin/Dockerfile
+    ports:
+      - "8001:8000"
+    networks:
+      - laravel
+    volumes:
+      - ./:/app
+    depends_on:
+      - admin_db
+
+  gateway_db:
+    image: mariadb
+    restart: always
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: 1
+      MYSQL_DATABASE: gateway
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - laravel
+    volumes:
+      - ./gateway/storage/database:/var/lib/mysql:rw
+    user: root
+    ports:
+      - "3306:3306"
+
+  admin_db:
+    image: mariadb
+    restart: always
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: 1
+      MYSQL_DATABASE: admin
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - laravel
+    volumes:
+      - ./admin/storage/database:/var/lib/mysql:rw
+    user: root
+    ports:
+      - "3307:3306"
+
+volumes:
+  admin_db:
+  gateway_db:

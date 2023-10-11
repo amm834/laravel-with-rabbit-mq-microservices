@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Models\Product;
+use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
@@ -31,7 +32,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return response()->json($product);
+        return response()->json($product)->status(Response::HTTP_CREATED);
     }
 
     /**
