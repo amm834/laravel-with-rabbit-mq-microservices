@@ -1,4 +1,8 @@
 version: "3.8"
+
+networks:
+  laravel:
+
 services:
   admin:
     build:
@@ -6,16 +10,29 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+    networks:
+      - laravel
     volumes:
       - .:/app
+    depends_on:
+      - admin_database
   admin_database:
-    image: mysql
+    image: mariadb
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD:
       MYSQL_DATABASE: admin
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_USER: root
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - laravel
     volumes:
-      - ./storage/database:/var/lib/mysql
+      - ./storage/database:/var/lib/mysql:rw
+    user: root
     ports:
-      - 3306:3306
+      - "3306:3306"
+
+volumes:
+  admin_database:

@@ -1,23 +1,17 @@
-FROM php:8.2-fpm as php
-RUN apt-get update && apt-get install -y \
-		libfreetype-dev \
-		libjpeg62-turbo-dev \
-		libpng-dev \
-	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
-	&& docker-php-ext-install -j$(nproc) gd
+FROM php:8.2-fpm
+ARG UID
+ARG GID
 
-FROM composer:latest AS composer
+ENV UID=${UID}
+ENV GID=${GID}
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+RUN docker-php-ext-install pdo pdo_mysql
 
 WORKDIR /app
-
-COPY database/ database/
-COPY composer.json composer.json
-COPY composer.lock composer.lock
-
 COPY . .
-
 RUN composer install
 
 CMD php artisan serve --host=0.0.0.0
 EXPOSE 8000
-
