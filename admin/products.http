@@ -1,0 +1,9 @@
+POST http://localhost:8001/api/products
+Accept: application/json
+Content-Type: application/json
+
+{
+    "title": "Product 1",
+    "image": "https://via.placeholder.com/200x200"
+}
+

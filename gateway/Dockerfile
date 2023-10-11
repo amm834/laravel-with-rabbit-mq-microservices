@@ -9,6 +9,7 @@ ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install sockets
 
 WORKDIR /app
 COPY . .

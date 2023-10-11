@@ -8,6 +8,9 @@
       <PhpSpecSuiteConfiguration>
         <option name="myPath" value="$PROJECT_DIR$/admin" />
       </PhpSpecSuiteConfiguration>
+      <PhpSpecSuiteConfiguration>
+        <option name="myPath" value="$PROJECT_DIR$/gateway" />
+      </PhpSpecSuiteConfiguration>
     </suites>
   </component>
 </project>

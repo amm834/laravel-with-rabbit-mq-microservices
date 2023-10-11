@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Jobs\ProductCreated;
 use App\Jobs\TestJob;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -27,6 +28,8 @@ class EventServiceProvider extends ServiceProvider
     public function boot(): void
     {
         \App::bind(TestJob::class . '@handle', fn(TestJob $job) => $job->handle());
+        \App::bind(ProductCreated::class . '@handle', fn(ProductCreated $job) => $job->handle());
+
     }
 
     /**
